@@ -1,0 +1,51 @@
+@import "~font-awesome/css/font-awesome.css";
+
+body {
+  position: relative;
+  color: rgb(247, 10, 10);
+  height: "100%";
+  background-color: #232c39;
+  font-family: Arial, Helvetica, Helvetica Neue, serif;
+  overflow-y: hidden;
+  margin: 0px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 2.25rem;
+  font-weight: bold;
+  letter-spacing: -0.025em;
+  color: #fff;
+}
+
+p {
+  font-size: 24px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: white;
+  opacity: 0.75;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 1;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+/* Hack to fix weird nav-icon alignment */
+/* Tacked on className on /keypunch-electron/node_modules/react-desktop/src/navPane/windows/pane/item/item.js*/
+
+span.navItem {
+  padding-left: 5px !important;
+}
