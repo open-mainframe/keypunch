@@ -1,8 +1,4 @@
 import React from "react";
-import brace from "brace";
-import "brace/mode/java";
-import "brace/theme/github";
-import "brace/theme/twilight";
 import { Button } from "react-desktop/windows";
 
 export default props => (

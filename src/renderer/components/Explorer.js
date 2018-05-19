@@ -1,11 +1,15 @@
 import React from "react";
 import { Treebeard } from "react-treebeard";
 import { View } from "react-desktop/windows";
+import { connect } from "react-redux";
+
+// Import AceEditor and Brace components needed to style and highlight syntax
+import AceEditor from "react-ace";
+import brace from "brace";
 import "brace/mode/java";
 import "brace/theme/github";
 import "brace/theme/twilight";
-import Editor from "react-ace";
-import { connect } from "react-redux";
+
 import jesFtp from "../utils/jesFtp";
 import { setEditorContent } from "../actions/editor";
 
@@ -198,7 +202,7 @@ class Explorer extends React.Component {
           data={this.props.datasets}
           onToggle={this.onToggle}
         />
-        <Editor
+        <AceEditor
           mode="java"
           theme={this.props.theme === "dark" ? "twilight" : "github"}
           name="EDITOR" //TODO: Change this to a generated value when we add multiple editors

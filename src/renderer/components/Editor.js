@@ -1,10 +1,13 @@
-import brace from "brace"; // This is needed
-import "brace/mode/java";
-import "brace/theme/github";
-import "brace/theme/twilight";
-import AceEditor from "react-ace";
 import React from "react";
 import { connect } from "react-redux";
+
+// Import AceEditor and Brace components needed to style and highlight syntax
+import AceEditor from "react-ace";
+import brace from "brace"; // This is needed
+import "brace/theme/twilight";
+import "brace/mode/java";
+import "brace/theme/github";
+
 import { setEditorContent } from "../actions/editor";
 
 function Editor(props) {

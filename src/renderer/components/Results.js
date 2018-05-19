@@ -1,8 +1,4 @@
 import React from "react";
-import "brace/mode/java";
-import "brace/theme/github";
-import "brace/theme/twilight";
-import Editor from "react-ace";
 import { connect } from "react-redux";
 import {
   View,
@@ -13,6 +9,14 @@ import {
   Text,
   Button
 } from "react-desktop/windows";
+
+// Import AceEditor and Brace components needed to style and highlight syntax
+import AceEditor from "react-ace";
+import brace from "brace";
+import "brace/mode/java";
+import "brace/theme/github";
+import "brace/theme/twilight";
+
 import jes from "../utils/jesFtp";
 
 const { dialog } = require("electron").remote;
@@ -38,7 +42,7 @@ function Results(props) {
               </MasterDetailsViewItemMaster>
               {props.jobs[jobID].results ? (
                 <MasterDetailsViewItemDetails background theme={props.theme}>
-                  <Editor
+                  <AceEditor
                     mode="java"
                     theme={props.theme === "dark" ? "twilight" : "github"}
                     name="RESULTS2" // TODO: Change this to a generated value when we add multiple editors
