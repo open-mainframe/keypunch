@@ -1,5 +1,4 @@
 import { combineReducers } from "redux";
-import { routerReducer as routing } from "react-router-redux";
 import editor from "./editor";
 import explorer from "./explorer";
 import config from "./config";
@@ -12,7 +11,6 @@ const rootReducer = combineReducers({
   editor,
   config,
   results,
-  routing,
   uiStyle,
   jobs,
   datasets,
