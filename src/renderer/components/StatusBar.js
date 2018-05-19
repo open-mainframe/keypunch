@@ -7,7 +7,7 @@ import { store } from "../index";
 import { testIndicators } from "../utils/nativeDialogs";
 import jes from "../utils/jesFtp";
 
-import { dialog } from "electron";
+const { dialog } = require("electron").remote;
 
 function StatusBar(props) {
   return (

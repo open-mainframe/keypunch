@@ -1,6 +1,6 @@
 import { openFilePicker, newFile, saveFile } from "./nativeDialogs";
 import jes from "./jesFtp";
-const { app } = require("electron");
+const { app } = require("electron").remote;
 
 export default function generateMenuTemplate() {
   const template = [
@@ -122,7 +122,7 @@ export default function generateMenuTemplate() {
           label: "View on GitHub",
           click() {
             require("electron").shell.openExternal(
-              "https://github.com/spmcbride1201/keypunch-electron"
+              "https://github.com/open-mainframe/keypunch"
             );
           }
         },
@@ -138,8 +138,8 @@ export default function generateMenuTemplate() {
 
   if (process.platform === "darwin") {
     template.unshift({
-      // label: app.getName(),
-      label: "Kludge",
+      label: app.getName(),
+      // label: "Kludge",
       submenu: [
         {
           role: "about"

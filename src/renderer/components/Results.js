@@ -15,7 +15,7 @@ import {
 } from "react-desktop/windows";
 import jes from "../utils/jesFtp";
 
-import { dialog } from "electron";
+const { dialog } = require("electron").remote;
 
 function Results(props) {
   // props is now from MY POV

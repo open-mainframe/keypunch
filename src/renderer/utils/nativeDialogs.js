@@ -1,4 +1,4 @@
-import { dialog } from "electron";
+const { dialog } = require("electron").remote;
 import { readFileSync, writeFileSync } from "fs";
 import { setEditorContent, setEditorPath } from "../actions/editor";
 

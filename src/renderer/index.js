@@ -7,17 +7,16 @@ import routes from "./routes";
 import configureStore from "./store/configureStore";
 import generateMenuTemplate from "./utils/menu";
 import "./app.global.css";
-const { app, Menu } = require("electron");
+const { app, Menu } = require("electron").remote;
 
 // Hack: Exporting Store to have access in nativeDialogs
 export const store = configureStore();
 const history = syncHistoryWithStore(hashHistory, store);
 
 // Generate and Render the Electron Native Menus
-// TODO: Uncomment me!
-// const template = generateMenuTemplate();
-// const menu = Menu.buildFromTemplate(template);
-// Menu.setApplicationMenu(menu);
+const template = generateMenuTemplate();
+const menu = Menu.buildFromTemplate(template);
+Menu.setApplicationMenu(menu);
 
 render(
   <Provider store={store}>
