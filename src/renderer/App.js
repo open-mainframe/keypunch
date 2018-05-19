@@ -1,14 +1,12 @@
 import React from "react";
 import { View, Window, NavPane, NavPaneItem } from "react-desktop/windows";
-import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { renderIcon } from "./utils/renderIcon";
+import { withRouter } from "react-router-dom";
+
 import StatusBar from "./components/StatusBar";
-import { Switch, Route } from "react-router";
-import Editor from "./components/Editor";
-import Explorer from "./components/Explorer";
-import ConfigForm from "./components/ConfigForm";
-import Results from "./components/Results";
+
+import AppNavPane from "./components/AppNavPane";
+import Main from "./components/Main";
 
 function App({ color, theme, editorContent, setEditorContent, history }) {
   return (
@@ -24,52 +22,8 @@ function App({ color, theme, editorContent, setEditorContent, history }) {
           height="100vh"
           width="100%"
         >
-          <NavPane
-            canPaneToggle // bool Sets whether the pane can be compacted.Default value "true".
-            color={color} // string sets the main color of a component.
-            defaultIsPaneExpanded={false} // string sets whether the pane is expanded by default. Default value "true".
-            // onPaneToggle function Callback function when the pane is expanded or compacted.
-            paneCompactedLength={60} // string, number sets the length of the pane when compacted. Default value "48px".
-            paneExpandedLength="100px" // string, number sets the length of the pane when expanded. Default value "200px"
-            // openLength='100px'
-            // string, number sets the length of the pane when expanded. Default value "200px"
-            theme={theme} // Sets the UI theme that is used by this component and its children elements. Property value "light", "dark"
-            // push
-            style={{
-              flex: "0 0 0%"
-            }}
-          >
-            <NavPaneItem
-              title="edit"
-              icon={renderIcon("punchCard", theme)}
-              onSelect={() => history.push("/editor")}
-              push
-            />
-            <NavPaneItem
-              title="results"
-              icon={renderIcon("printout", theme)}
-              onSelect={() => history.push("/results")}
-              push
-            />
-            <NavPaneItem
-              title="explorer"
-              icon={renderIcon("mainframe", theme)}
-              onSelect={() => history.push("/explorer")}
-              push
-            />
-            <NavPaneItem
-              title="config"
-              icon={renderIcon("settings", theme)}
-              onSelect={() => history.push("/config")}
-              push
-            />
-          </NavPane>
-          <Switch>
-            <Route path="/editor" component={Editor} />
-            <Route path="/config" component={ConfigForm} />
-            <Route path="/results" component={Results} />
-            <Route path="/explorer" component={Explorer} />
-          </Switch>
+          <AppNavPane color={color} theme={theme} />
+          <Main />
         </View>
         <StatusBar />
       </View>

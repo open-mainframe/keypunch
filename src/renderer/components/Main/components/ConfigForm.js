@@ -6,8 +6,8 @@ import {
   setFtpPort,
   setFtpUserName,
   setFtpPassword
-} from "../actions/configForm.js";
-import { setThemeDark, setThemeLight } from "../actions/uiStyle";
+} from "../../../actions/configForm.js";
+import { setThemeDark, setThemeLight } from "../../../actions/uiStyle";
 
 function ConfigForm(props) {
   const hostName = props.hostName;

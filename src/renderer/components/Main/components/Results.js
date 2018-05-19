@@ -17,7 +17,7 @@ import "brace/mode/java";
 import "brace/theme/github";
 import "brace/theme/twilight";
 
-import jes from "../utils/jesFtp";
+import jes from "../../../utils/jesFtp";
 
 const { dialog } = require("electron").remote;
 

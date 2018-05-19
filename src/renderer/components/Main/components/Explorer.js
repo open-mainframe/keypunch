@@ -10,8 +10,8 @@ import "brace/mode/java";
 import "brace/theme/github";
 import "brace/theme/twilight";
 
-import jesFtp from "../utils/jesFtp";
-import { setEditorContent } from "../actions/editor";
+import jesFtp from "../../../utils/jesFtp";
+import { setEditorContent } from "../../../actions/editor";
 
 const lightTree = {
   tree: {

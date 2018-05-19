@@ -2,10 +2,10 @@ import React from "react";
 import { View } from "react-desktop/windows";
 import { connect } from "react-redux";
 
-import Indicator from "./Indicator";
-import { store } from "../index";
-import { testIndicators } from "../utils/nativeDialogs";
-import jes from "../utils/jesFtp";
+import Indicator from "./components/Indicator";
+import { store } from "../../index";
+import { testIndicators } from "../../utils/nativeDialogs";
+import jes from "../../utils/jesFtp";
 
 const { dialog } = require("electron").remote;
 

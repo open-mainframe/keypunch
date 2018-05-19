@@ -9,7 +9,7 @@ import App from "./App";
 import "./app.global.css";
 const { app, Menu } = require("electron").remote;
 
-// Hack: Exporting Store to have access in nativeDialogs
+// Exporting Store to have access in nativeDialogs
 export const store = configureStore();
 
 // Generate and Render the Electron Native Menus

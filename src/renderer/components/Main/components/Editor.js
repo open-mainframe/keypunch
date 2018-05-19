@@ -8,7 +8,7 @@ import "brace/theme/twilight";
 import "brace/mode/java";
 import "brace/theme/github";
 
-import { setEditorContent } from "../actions/editor";
+import { setEditorContent } from "../../../actions/editor";
 
 function Editor(props) {
   return (
